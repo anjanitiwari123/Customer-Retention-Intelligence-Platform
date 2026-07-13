@@ -132,8 +132,6 @@ with st.form("single_customer_form"):
     submitted = st.form_submit_button("🔮 Predict Churn", use_container_width=True, type="primary")
 
 if submitted:
-    # Guard against the "No phone service" / "No internet service" combos
-    # being selected inconsistently with the service flags above.
     if internet_service == "No":
         online_security = online_backup = device_protection = tech_support = "No internet service"
         streaming_tv = streaming_movies = "No internet service"
